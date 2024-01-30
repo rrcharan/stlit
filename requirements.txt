@@ -3,3 +3,11 @@ pandas
 numpy
 langchain
 langchain-openai
+pypdf
+yt_dlp
+pydub
+chromadb
+tiktoken
+lark
+langchain[docarray]
+langchain-community

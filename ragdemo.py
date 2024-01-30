@@ -4,6 +4,7 @@ import openai
 import sys
 import datetime
 import streamlit as st
+import sqlite3
 from dotenv import load_dotenv, find_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter

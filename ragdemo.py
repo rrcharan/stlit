@@ -74,7 +74,7 @@ openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 # print(len(splits))
 
 # # Embeddings
-embedding = OpenAIEmbeddings(openai_api_type=openai_api_key)
+embedding = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
 
 # # vector stores

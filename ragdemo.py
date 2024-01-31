@@ -1,6 +1,6 @@
-__import__('pysqlite3')
+# __import__('pysqlite3')
 import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import os
 import shutil
 import openai
@@ -74,7 +74,8 @@ openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 # print(len(splits))
 
 # # Embeddings
-embedding = OpenAIEmbeddings()
+embedding = OpenAIEmbeddings(openai_api_type=openai_api_key)
+
 
 # # vector stores
 persist_directory = os.path.join(os.getcwd(), 'docs2/chroma/')

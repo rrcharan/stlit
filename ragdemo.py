@@ -1,10 +1,11 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import os
 import shutil
 import openai
-import sys
 import datetime
 import streamlit as st
-import sqlite3
 from dotenv import load_dotenv, find_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter

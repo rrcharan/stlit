@@ -11,3 +11,4 @@ tiktoken
 lark
 langchain[docarray]
 langchain-community
+pysqlite3-binary

@@ -32,9 +32,9 @@ openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 # open_api_key = os.environ['OPENAI_API_KEY']
 # loader = PyPDFLoader('ML.pdf')
 # uncomment to create new embeddings **************************************
-loaders = [PyPDFLoader('Exam-Guide.pdf'),
-        #    PyPDFLoader('Sample-Questions.pdf'),
-           ]
+# loaders = [PyPDFLoader('Exam-Guide.pdf'),
+#         #    PyPDFLoader('Sample-Questions.pdf'),
+#            ]
 # ---------------------------------------------------------------------------
 # single document
 # pages = loaders.load()
@@ -46,9 +46,9 @@ loaders = [PyPDFLoader('Exam-Guide.pdf'),
 # page.metadata
 # uncomment to create new embeddings **************************************
 # for multiple documents, load one by one
-docs = []
-for loader in loaders:
-    docs.extend(loader.load())
+# docs = []
+# for loader in loaders:
+#     docs.extend(loader.load())
 # -----------------------------------  ------------------------------------
 # RecursiveCharacterTextSplitter is recommended for generic text.
 # text_splitter = CharacterTextSplitter(
@@ -62,14 +62,14 @@ for loader in loaders:
 # print(len(docs))
 # print(len(pages))
 # Uncomment to create new embeddings **************************************
-text_splitter = RecursiveCharacterTextSplitter(
-    separators=["\n\n", "\n", " ", ""],
-    chunk_size=1000,
-    chunk_overlap=150,
-    # length_function=len,
-    )
+# text_splitter = RecursiveCharacterTextSplitter(
+#     separators=["\n\n", "\n", " ", ""],
+#     chunk_size=1000,
+#     chunk_overlap=150,
+#     # length_function=len,
+#     )
 
-splits = text_splitter.split_documents(docs)
+# splits = text_splitter.split_documents(docs)
 # print(len(splits))
 
 # # Embeddings
@@ -87,15 +87,15 @@ persist_directory = os.path.join(os.getcwd(), 'docs2/chroma/')
 #     # embedding_function=embedding,
 #     persist_directory=persist_directory)
 # new db creation
-vectordb = Chroma.from_documents(documents=splits, 
-                                 embedding=embedding, 
-                                 persist_directory=persist_directory)
+# vectordb = Chroma.from_documents(documents=splits, 
+#                                  embedding=embedding, 
+#                                  persist_directory=persist_directory)
 
 # print(vectordb._collection.count())
 # Existing db query
-# vectordb = Chroma(
-#     embedding_function=embedding,
-#     persist_directory=persist_directory)
+vectordb = Chroma(
+    embedding_function=embedding,
+    persist_directory=persist_directory)
 # ---------------------------------------------------------------------
 # sample similarity search
 # question = "what are Storage services?"

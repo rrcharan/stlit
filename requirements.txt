@@ -11,4 +11,3 @@ tiktoken
 lark
 langchain[docarray]
 langchain-community
-sqllite3

@@ -9,7 +9,7 @@ from dotenv import load_dotenv, find_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain.vectorstores import Chroma
 # Self query retriever
 from langchain_community.llms import OpenAI
 from langchain.retrievers.self_query.base import SelfQueryRetriever

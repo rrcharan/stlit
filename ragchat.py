@@ -26,6 +26,8 @@ from langchain.prompts import PromptTemplate
 
 openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 
+open_api_key = os.environ['OPENAI_API_KEY']
+
 # Document loader
 
 loaders = [PyPDFLoader('Exam-Guide.pdf')]

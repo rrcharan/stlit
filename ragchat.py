@@ -24,9 +24,9 @@ from langchain_openai  import ChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 
-# openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
+openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 
-openai_api_key = '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'
+openai_api_key = st.secrets['OPENAI_API_KEY']
 
 # Document loader
 
